@@ -24,13 +24,14 @@ class Building {
   int w;
   int h;
   int i;
+  float sc;
 
   Building(int x_, int y_, color s_, color ss_, int sss_, int ssss_, int w_, int h_, 
   //int aa_, int bb_, int cc_, int dd_ ,
   //int tx1, int tx2, int ty1, int ty2, int tz1, int tz2, 
   float ra_, 
   int m_,int n_, int i_,//int v_, 
-  int a_) {
+  int a_, float sc_) {
     x=x_;
     y=y_;
     skin=s_;
@@ -44,28 +45,14 @@ class Building {
     n=n_;
     m=m_;
     i=i_;
-    /*
-    aa= aa_;
-    bb= bb_;
-    cc= cc_;
-    dd= dd_;
-    x1= tx1;
-    x2= tx2;
-    y1= ty1;
-    y2= ty2;
-    z1= tz1;
-    z2= tz2;
-    n=n_;
-    m=m_;
-    v=v_;
-    b=b_;
-*/
+    sc=sc_;
+
   }
 
 
   void display() {  //the building
-  scale(0.5);
-  rotate(ra);
+  scale(sc);
+  //rotate(ra);
   stroke(95, 164, 255);
   strokeWeight(2);
   fill(skin);
@@ -88,11 +75,12 @@ class Building {
 
   
   void move(int amount){ //moving towards the black hole,falls inside
-    x= x+ amount;
-    
-    if (x> 408){
-      y= y+amount;
-      x=x+1;
+    y= y+ amount;
+    skin=skin+200;
+    skin2=skin2+200;
+    skin3=skin3+200;
+    if (y> 1500){
+      y=0;
       
     }
 
@@ -101,5 +89,4 @@ class Building {
   void rotat(float radian){ //rotate when falling
     ra= ra+radian;
   }
-  
 }
