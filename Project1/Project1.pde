@@ -73,8 +73,8 @@ void circle() {
   //translate(width/2, height/2);
   noStroke();
   float d =map(mouseX, 0, width, 700, 1000);
-  float c =map(mouseX, 0, height, 500, 1000);
-  ellipse(750, 750, d,c);
+  float e =map(mouseX, 0, height, 500, 1000);
+  ellipse(750, 750, d,e);
   for (float i = 900; i < 1000; i = i+-1) {
     for (float j = 900; j < 1000; j = j+-1) {
       //ellipse(i,i,100,100);
@@ -87,8 +87,8 @@ void circle() {
       j = 750 +- rad * sin(q);
 
       noStroke();
-      c = 255-q;
-      fill(c); 
+      
+      fill(0); 
       q=q+0.5;
       rad= rad+-1;
     }
